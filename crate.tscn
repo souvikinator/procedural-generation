@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dm28gkd7ght0e"]
+
+[ext_resource type="Texture2D" uid="uid://3wjyqktiwx2l" path="res://Group 92.png" id="1_h0u4p"]
+[ext_resource type="Script" path="res://crate.gd" id="1_kuaar"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0doap"]
+size = Vector2(70, 70)
+
+[node name="crate" type="Area2D" groups=["create"]]
+collision_layer = 4
+collision_mask = 9
+script = ExtResource("1_kuaar")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_h0u4p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0doap")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

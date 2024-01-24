@@ -3,10 +3,11 @@
 [ext_resource type="Script" path="res://player.gd" id="1_qed0k"]
 [ext_resource type="Texture2D" uid="uid://bc6satgxw67dn" path="res://Group 95.png" id="1_tpmdq"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vv5sr"]
-size = Vector2(72, 71)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h8aus"]
+radius = 35.0
+height = 74.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 22
 script = ExtResource("1_qed0k")
 
@@ -16,4 +17,4 @@ texture = ExtResource("1_tpmdq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_vv5sr")
+shape = SubResource("CapsuleShape2D_h8aus")

@@ -1,10 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgfeapqwuqbqv"]
+[gd_scene load_steps=5 format=3 uid="uid://bgfeapqwuqbqv"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_3gxyp"]
 [ext_resource type="PackedScene" uid="uid://b7iwr1mbcm3wx" path="res://player.tscn" id="1_555na"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_jvmio"]
+
+[sub_resource type="TileSet" id="TileSet_q8l1p"]
+sources/0 = SubResource("TileSetScenesCollectionSource_jvmio")
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_3gxyp")
 
 [node name="Player" parent="." instance=ExtResource("1_555na")]
 position = Vector2(560, 306)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_q8l1p")
+format = 2
